@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Niklas Albinsson Portfolio`,
+    description: `Min personliga portfolio för att visa upp tidigare projekt jag arbetat på, både professionella och hobbyprojekt.`,
+    author: `Niklas Albinsson`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,5 +30,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    `gatsby-plugin-netlify-cms`,
   ],
 }
