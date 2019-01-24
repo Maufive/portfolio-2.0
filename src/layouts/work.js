@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import ArrowIcon from "../../assets/arrow.svg";
 import {
 	ActiveProjectStyles,
@@ -8,9 +8,10 @@ import {
 	TechStack,
 } from "../styles/ProjectStyles";
 
-const ActiveProject = () => (
+const ActiveProject = props => (
 	<ActiveProjectStyles>
 		<ImagePlaceholder />
+		{console.log(props)}
 		<Container>
 			<h2>Receptboken</h2>
 			<p>
@@ -28,3 +29,7 @@ const ActiveProject = () => (
 );
 
 export default ActiveProject;
+
+ActiveProject.propTypes = {
+	data: PropTypes.object,
+};

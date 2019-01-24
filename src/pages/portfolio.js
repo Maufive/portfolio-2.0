@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 // import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import Layout from "../layouts/index";
@@ -13,8 +14,8 @@ const styles = {
 	width: "50%",
 };
 
-const PortfolioPage = props => (
-	<Layout location={props.location}>
+const PortfolioPage = ({ data, location }) => (
+	<Layout location={location}>
 		<SEO
 			title="Portfolio"
 			keywords={[
@@ -29,7 +30,7 @@ const PortfolioPage = props => (
 				"albinsson",
 			]}
 		/>
-		<ActiveProject />
+		<ActiveProject data={data} />
 		<div style={styles}>
 			<SmallPlaceholder />
 			<SmallPlaceholder />
@@ -44,4 +45,17 @@ export default PortfolioPage;
 
 PortfolioPage.propTypes = {
 	location: PropTypes.object,
+	data: PropTypes.object,
 };
+
+export const query = graphql`
+	query {
+		file(relativePath: { eq: "/images/receptboken.png" }) {
+			childImageSharp {
+				fixed(width: 375, height: 325) {
+					...GatsbyImageSharpFixed
+				}
+			}
+		}
+	}
+`;
