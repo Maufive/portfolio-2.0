@@ -12,7 +12,7 @@ import GithubIcon from "../../assets/github.svg";
 const IndexPage = props => (
 	<Layout location={props.location}>
 		<SEO
-			title="Home"
+			title="Hem"
 			keywords={[
 				"react",
 				"webbutvecklare",
@@ -28,11 +28,11 @@ const IndexPage = props => (
 				<span>JAVASCRIPT</span>-UTVECKLARE<span>.</span>
 			</Headline>
 			<p>
-				<i>Hej!</i>
+				Hej! 👋
 				<br />
 				Jag heter <span style={{ color: "#FE7E11" }}>Niklas Albinsson</span> och
-				är självlärd Javascript-utvecklare från Umeå med en brinnande motivation
-				för <span style={{ fontWeight: "700" }}>Front-End.</span>
+				är självlärd Javascript-utvecklare från Umeå med en <i>brinnande</i>{" "}
+				motivation för <span style={{ fontWeight: "700" }}>Front-End.</span>
 			</p>
 			<Link to="/about/">
 				<Button>Läs mer om mig</Button>

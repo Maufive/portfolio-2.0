@@ -2,13 +2,13 @@ backend:
   name: github
   repo: Maufive/portfolio-2.0
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/work/images
+public_folder: /images
 
 collections:
   - name: work
     label: Work
-    folder: 'src/work'
+    folder: 'static/work'
     create: true
     slug: '{{name}}'
     fields:

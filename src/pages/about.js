@@ -20,7 +20,7 @@ const StyledImage = styled(Img)`
 const AboutPage = ({ data, location }) => (
 	<Layout location={location}>
 		<SEO
-			title="About"
+			title="Om mig"
 			keywords={[
 				"react",
 				"webbutvecklare",
