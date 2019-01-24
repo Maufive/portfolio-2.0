@@ -1,42 +1,54 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+import React from "react";
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Logo, HeaderStyles, NavStyles } from "../styles/HeaderStyles";
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+const ActiveLink = styled.p`
+	color: ${props => props.theme.orange};
+	font-weight: 700 !important;
+`;
+
+const Nav = props => {
+	const location = props.location;
+	return (
+		<NavStyles>
+			{location === "/about/" ? (
+				<Link to="/about/">
+					<ActiveLink>Om mig</ActiveLink>
+				</Link>
+			) : (
+				<Link to="/about/">
+					<p>Om mig</p>
+				</Link>
+			)}
+			<p>Portfolio</p>
+			<p>CV</p>
+			<p>Kontakt</p>
+		</NavStyles>
+	);
+};
+
+const Header = ({ location }) => (
+	<HeaderStyles>
+		<Logo>
+			<h1>
+				<Link to="/">
+					NIKLAS
+					<span>ALBINSSON</span>
+				</Link>
+			</h1>
+		</Logo>
+		<Nav location={location.pathname} />
+	</HeaderStyles>
+);
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+	location: PropTypes.object,
+};
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+Nav.propTypes = {
+	location: PropTypes.string,
+};
 
-export default Header
+export default Header;
