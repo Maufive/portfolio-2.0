@@ -10,10 +10,9 @@ collections:
     label: Work
     folder: 'static/work'
     create: true
-    slug: '{{name}}'
     fields:
       - { name: title, label: Title }
-      - { name: tool, label: Tools, widget: list }
+      - { name: tools, label: Tools, widget: list }
       - { name: date, label: Date, widget: date }
       - { name: image, label: Image, widget: image }
       - { name: body, label: Body, widget: markdown }

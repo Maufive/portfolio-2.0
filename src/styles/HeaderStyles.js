@@ -33,5 +33,6 @@ export const NavStyles = styled.nav`
 		font-size: 2rem;
 		margin-block-end: 0;
 		margin-block-start: 0;
+		transition: all 300ms ease;
 	}
 `;

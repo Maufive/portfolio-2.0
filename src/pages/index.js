@@ -28,7 +28,7 @@ const IndexPage = props => (
 				<span>JAVASCRIPT</span>-UTVECKLARE<span>.</span>
 			</Headline>
 			<p>
-				Hej! 👋
+				<span style={{ fontWeight: "400" }}>Hej! 👋</span>
 				<br />
 				Jag heter <span style={{ color: "#FE7E11" }}>Niklas Albinsson</span> och
 				är självlärd Javascript-utvecklare från Umeå med en <i>brinnande</i>{" "}

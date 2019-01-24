@@ -15,6 +15,7 @@ export const Jumbotron = styled.div`
 export const Headline = styled.h1`
 	font-size: 6rem;
 	font-weight: 400;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 	span {
 		color: ${props => props.theme.orange};
 		font-weight: 700;
