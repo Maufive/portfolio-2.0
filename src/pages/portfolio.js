@@ -30,9 +30,9 @@ const PortfolioPage = ({ data, location }) => (
 				"albinsson",
 			]}
 		/>
-		<ActiveProject data={data} />
+		<ActiveProject data={data.cropCenter} />
 		<div style={styles}>
-			<SmallPlaceholder />
+			<SmallPlaceholder style={{ border: "2px solid orange" }} />
 			<SmallPlaceholder />
 			<SmallPlaceholder />
 			<SmallPlaceholder />
@@ -50,10 +50,15 @@ PortfolioPage.propTypes = {
 
 export const query = graphql`
 	query {
-		file(relativePath: { eq: "/images/receptboken.png" }) {
+		cropCenter: file(relativePath: { regex: "/receptboken.png/" }) {
 			childImageSharp {
-				fixed(width: 375, height: 325) {
-					...GatsbyImageSharpFixed
+				resize(width: 575, height: 525, cropFocus: CENTER) {
+					src
+					originalName
+					tracedSVG
+					width
+					height
+					aspectRatio
 				}
 			}
 		}

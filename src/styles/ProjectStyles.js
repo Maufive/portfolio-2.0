@@ -4,12 +4,11 @@ export const ActiveProjectStyles = styled.div`
 	margin-top: 5rem;
 	width: 100%;
 	display: flex;
-	align-items: center;
 	svg {
 		height: 150px;
 		width: 75px;
 		fill: ${props => props.theme.grey};
-		margin: 0 auto;
+		margin: 10% auto;
 		cursor: pointer;
 		transition: all 200ms ease;
 		&:hover {
@@ -29,11 +28,11 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-left: 5rem;
+	height: 100%;
 
 	h2 {
     color: ${props => props.theme.orange};
-    margin-block-end: 0;
-    margin-block-start: 0;
+		line-height: 1;
 	}
 
 	p {
@@ -52,4 +51,18 @@ export const SmallPlaceholder = styled.div`
 	width: 100px;
 	height: 100px;
 	background: linear-gradient(135.69deg, #828282 -12%, #3e3e3e 108.36%);
+`;
+
+export const ImageAndButtons = styled.div`
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	> div {
+		display: flex;
+		justify-content: space-around;
+		> button {
+			margin-top: 5rem;
+		}
+	}
 `;

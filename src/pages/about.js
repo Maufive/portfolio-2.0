@@ -105,10 +105,8 @@ export default AboutPage;
 
 export const query = graphql`
 	query {
-		file(relativePath: { eq: "/images/suit.jpg" }) {
+		file(relativePath: { regex: "/suit.jpg/" }) {
 			childImageSharp {
-				# Specify the image processing specifications right in the query.
-				# Makes it trivial to update as your page's design changes.
 				fixed(width: 300, height: 300) {
 					...GatsbyImageSharpFixed
 				}

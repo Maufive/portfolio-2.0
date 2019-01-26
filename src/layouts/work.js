@@ -1,17 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Img from "gatsby-image";
+import styled from "styled-components";
 import ArrowIcon from "../../assets/arrow.svg";
 import {
 	ActiveProjectStyles,
 	ImagePlaceholder,
 	Container,
 	TechStack,
+	ImageAndButtons,
 } from "../styles/ProjectStyles";
+import { Button } from "../styles/Button";
 
-const ActiveProject = props => (
+const StyledImage = styled(Img)`
+	max-height: 325px;
+	max-width: 375px;
+`;
+
+const ActiveProject = ({ data }) => (
 	<ActiveProjectStyles>
-		<ImagePlaceholder />
-		{console.log(props)}
+		<ImageAndButtons>
+			<StyledImage fixed={data.childImageSharp.resize} />
+			<div>
+				<Button>Live demo</Button>
+				<Button secondary>Github</Button>
+			</div>
+		</ImageAndButtons>
 		<Container>
 			<h2>Receptboken</h2>
 			<p>

@@ -17,9 +17,13 @@ export const Logo = styled.div`
 			font-weight: 200;
 			text-transform: uppercase;
 			color: ${props => props.theme.grey};
+			transition: all 300ms ease;
 			span {
 				margin-left: 1rem;
 				font-weight: 700;
+			}
+			&:hover {
+				color: ${props => props.theme.orange};
 			}
 		}
 	}
@@ -34,5 +38,8 @@ export const NavStyles = styled.nav`
 		margin-block-end: 0;
 		margin-block-start: 0;
 		transition: all 300ms ease;
+		&:hover {
+			color: ${props => props.theme.orange};
+		}
 	}
 `;
