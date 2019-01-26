@@ -6,6 +6,7 @@ import styled from "styled-components";
 import SEO from "../components/seo";
 import Layout from "../layouts/index";
 import ActiveProject from "../layouts/work";
+import { fadeIn } from "../styles/Animations";
 
 const SmallPlaceholder = styled(Img)`
 	max-width: 100px;
@@ -13,12 +14,14 @@ const SmallPlaceholder = styled(Img)`
 	cursor: pointer;
 `;
 
-const styles = {
-	display: "flex",
-	justifyContent: "space-around",
-	margin: "4rem auto",
-	width: "50%",
-};
+const ThumbnailContainer = styled.div`
+	display: flex;
+	justify-content: space-around;
+	margin: 4rem auto;
+	width: 50%;
+	opacity: 0;
+	animation: ${fadeIn} 500ms 500ms ease 1 normal forwards running;
+`;
 
 class PortfolioPage extends Component {
 	constructor(props) {
@@ -62,18 +65,48 @@ class PortfolioPage extends Component {
 					activeProject={this.state.activeProject}
 					activeProjectImage={this.state.activeProjectImage}
 				/>
-				<div style={styles}>
+				<ThumbnailContainer>
 					{this.state.data.cropCenter.edges.map(project => {
-						return (
-							<div
-								key={project.node.childImageSharp.resize.originalName}
-								onClick={() => this.handleActiveProject(project)}
-							>
-								<SmallPlaceholder fixed={project.node.childImageSharp.resize} />
-							</div>
-						);
+						if (
+							project.node.childImageSharp.resize ===
+							this.state.activeProjectImage
+						) {
+							return (
+								<div
+									style={{
+										border: "2px solid #FE7E11",
+										height: "104px",
+									}}
+									key={project.node.childImageSharp.resize.originalName}
+									onClick={() => this.handleActiveProject(project)}
+								>
+									<SmallPlaceholder
+										fixed={project.node.childImageSharp.resize}
+									/>
+								</div>
+							);
+						} else {
+							return (
+								<div
+									key={project.node.childImageSharp.resize.originalName}
+									onClick={() => this.handleActiveProject(project)}
+								>
+									<SmallPlaceholder
+										fixed={project.node.childImageSharp.resize}
+									/>
+								</div>
+							);
+						}
+						// return (
+						// 	<div
+						// 		key={project.node.childImageSharp.resize.originalName}
+						// 		onClick={() => this.handleActiveProject(project)}
+						// 	>
+						// 		<SmallPlaceholder fixed={project.node.childImageSharp.resize} />
+						// 	</div>
+						// );
 					})}
-				</div>
+				</ThumbnailContainer>
 			</Layout>
 		);
 	}

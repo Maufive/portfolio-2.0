@@ -25,6 +25,7 @@ const StyledPage = styled.div`
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+  @import url('https://fonts.googleapis.com/css?family=Sarala|Lato:700');
 
   html {
     box-sizing: border-box;
@@ -53,6 +54,15 @@ const GlobalStyle = createGlobalStyle`
     margin-block-start: 0;
     margin-block-end: 0;
   }
+
+  h1 {
+    font-family: "Lato" !important;
+  }
+
+  h2, h3 {
+    font-family: "Sarala" !important;
+  }
+
   a, a:visited {
     color: ${props => props.theme.grey};
     text-decoration: none;

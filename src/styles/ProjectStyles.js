@@ -30,16 +30,16 @@ export const Container = styled.div`
 	margin-left: 5rem;
 	height: 100%;
 
-	h2 {
-    color: ${props => props.theme.orange};
+	h1 {
+		color: ${props => props.theme.orange};
 		line-height: 1;
+		font-weight: 400;
 	}
 
 	p {
 		font-weight: 200;
-    /* color: ${props => props.theme.grey}; */
-    color: #bdbdbd;
-    font-size: 2rem;
+		color: #bdbdbd;
+		font-size: 2rem;
 	}
 `;
 
