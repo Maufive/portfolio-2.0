@@ -47,12 +47,6 @@ export const TechStack = styled.p`
 	color: ${props => props.theme.grey} !important;
 `;
 
-export const SmallPlaceholder = styled.div`
-	width: 100px;
-	height: 100px;
-	background: linear-gradient(135.69deg, #828282 -12%, #3e3e3e 108.36%);
-`;
-
 export const ImageAndButtons = styled.div`
 	display: flex;
 	flex-direction: column;

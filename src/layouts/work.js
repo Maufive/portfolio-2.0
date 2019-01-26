@@ -5,7 +5,6 @@ import styled from "styled-components";
 import ArrowIcon from "../../assets/arrow.svg";
 import {
 	ActiveProjectStyles,
-	ImagePlaceholder,
 	Container,
 	TechStack,
 	ImageAndButtons,
@@ -17,25 +16,24 @@ const StyledImage = styled(Img)`
 	max-width: 375px;
 `;
 
-const ActiveProject = ({ data }) => (
+const ActiveProject = ({ activeProject, activeProjectImage }) => (
 	<ActiveProjectStyles>
 		<ImageAndButtons>
-			<StyledImage fixed={data.childImageSharp.resize} />
+			<StyledImage fixed={activeProjectImage} />
 			<div>
 				<Button>Live demo</Button>
 				<Button secondary>Github</Button>
 			</div>
 		</ImageAndButtons>
 		<Container>
-			<h2>Receptboken</h2>
-			<p>
-				Fullstack webapp där användare kan ladda upp, spara, betygsätta recept.
-				Användare kan också spara recept till inköpslistor som man enkelt kan ha
-				med sig på affären när man ska handla.
-			</p>
+			<h2>{activeProject.frontmatter.title}</h2>
+			<p>{activeProject.rawMarkdownBody}</p>
 			<TechStack>
-				Byggt med hjälp av: NextJS, Express, MongoDB, styled-components, Node,
-				PassportJS
+				Byggt med hjälp av:{" "}
+				{activeProject.frontmatter.tools.map(tool => (
+					<span key={tool}>{tool}, </span>
+				))}
+				.
 			</TechStack>
 		</Container>
 		<ArrowIcon />
@@ -45,5 +43,6 @@ const ActiveProject = ({ data }) => (
 export default ActiveProject;
 
 ActiveProject.propTypes = {
-	data: PropTypes.object,
+	activeProject: PropTypes.object,
+	activeProjectImage: PropTypes.object,
 };
