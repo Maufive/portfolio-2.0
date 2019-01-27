@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fadeIn, grow } from "./Animations";
 
 export const ActiveProjectStyles = styled.div`
 	margin-top: 5rem;
@@ -15,12 +16,6 @@ export const ActiveProjectStyles = styled.div`
 			fill: ${props => props.theme.orange};
 		}
 	}
-`;
-
-export const ImagePlaceholder = styled.div`
-	background: linear-gradient(135.69deg, #828282 -12%, #3e3e3e 108.36%);
-	height: 325px;
-	width: 375px;
 `;
 
 export const Container = styled.div`
@@ -54,9 +49,25 @@ export const ImageAndButtons = styled.div`
 
 	> div {
 		display: flex;
-		justify-content: space-around;
 		> button {
-			margin-top: 5rem;
+			margin-top: 3rem;
+			margin-right: 3rem;
 		}
 	}
+`;
+
+export const ThumbnailContainer = styled.div`
+	display: flex;
+	justify-content: space-around;
+	margin: 4rem auto;
+	width: 50%;
+	opacity: 0;
+	animation: ${fadeIn} 500ms 500ms ease 1 normal forwards running;
+`;
+
+export const ActiveThumbnail = styled.div`
+	height: 103px;
+	outline: solid 2px ${props => props.theme.orange};
+	/* border: 2px solid ${props => props.theme.orange}; */
+	animation: ${grow} 400ms ease 1 normal forwards running;
 `;

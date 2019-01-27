@@ -9,3 +9,15 @@ export const fadeIn = keyframes`
     opacity: 1;
   }
 `;
+
+export const grow = keyframes`
+  0% {
+    transform: scale(1);
+    
+
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+`;

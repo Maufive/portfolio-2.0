@@ -12,18 +12,18 @@ export const Jumbotron = styled.div`
 	flex-direction: column;
 	h2 {
 		opacity: 0;
-		animation: ${fadeIn} 400ms 600ms ease 1 normal forwards running;
+		animation: ${fadeIn} 400ms 400ms ease 1 normal forwards running;
 	}
 	p {
 		font-size: 2.5rem;
 		font-weight: 200;
 		max-width: 60%;
 		opacity: 0;
-		animation: ${fadeIn} 400ms 600ms ease 1 normal forwards running;
+		animation: ${fadeIn} 400ms 400ms ease 1 normal forwards running;
 	}
 	button {
 		opacity: 0;
-		animation: ${fadeIn} 400ms 800ms ease 1 normal forwards running;
+		animation: ${fadeIn} 400ms 600ms ease 1 normal forwards running;
 	}
 `;
 
@@ -32,7 +32,7 @@ export const Headline = styled.h1`
 	font-weight: 400;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 	opacity: 0;
-	animation: ${fadeIn} 400ms 500ms ease 1 normal forwards running;
+	animation: ${fadeIn} 400ms 400ms ease 1 normal forwards running;
 	span {
 		color: ${props => props.theme.orange};
 		font-weight: 700;
@@ -45,7 +45,7 @@ export const ButtonContainer = styled.div`
 	margin-top: 5rem;
 	width: 200px;
 	opacity: 0;
-	animation: ${fadeIn} 400ms 900ms ease 1 normal forwards running;
+	animation: ${fadeIn} 400ms 600ms ease 1 normal forwards running;
 	svg {
 		height: 2.5rem;
 		width: 2.5rem;

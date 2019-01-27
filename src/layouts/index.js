@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Header from "../components/header";
-import PageTransition from "gatsby-plugin-page-transitions";
+import { Spring } from "react-spring";
 
 const theme = {
 	orange: "#FE7E11",
@@ -74,7 +74,9 @@ const Layout = ({ children, location }) => (
 		<StyledPage>
 			<GlobalStyle />
 			<Header location={location} />
-			<PageTransition>{children}</PageTransition>
+			<Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+				{props => <div style={props}>{children}</div>}
+			</Spring>
 		</StyledPage>
 	</ThemeProvider>
 );

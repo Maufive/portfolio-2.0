@@ -12,7 +12,8 @@ import { Button } from "../styles/Button";
 
 const StyledImage = styled(Img)`
 	max-height: 325px;
-	max-width: 375px;
+	max-width: 500px;
+	border-radius: 5px;
 `;
 
 class ActiveProject extends Component {

@@ -32,8 +32,15 @@ const Nav = props => {
 					<p>Portfolio</p>
 				</Link>
 			)}
-			<p>CV</p>
-			<p>Kontakt</p>
+			{location === "/contact/" ? (
+				<Link to="/contact/">
+					<ActiveLink>Kontakt</ActiveLink>
+				</Link>
+			) : (
+				<Link to="/contact/">
+					<p>Kontakt</p>
+				</Link>
+			)}
 		</NavStyles>
 	);
 };

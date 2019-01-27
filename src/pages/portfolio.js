@@ -6,7 +6,7 @@ import styled from "styled-components";
 import SEO from "../components/seo";
 import Layout from "../layouts/index";
 import ActiveProject from "../layouts/work";
-import { fadeIn } from "../styles/Animations";
+import { ThumbnailContainer, ActiveThumbnail } from "../styles/ProjectStyles";
 
 const SmallPlaceholder = styled(Img)`
 	max-width: 100px;
@@ -14,22 +14,13 @@ const SmallPlaceholder = styled(Img)`
 	cursor: pointer;
 `;
 
-const ThumbnailContainer = styled.div`
-	display: flex;
-	justify-content: space-around;
-	margin: 4rem auto;
-	width: 50%;
-	opacity: 0;
-	animation: ${fadeIn} 500ms 500ms ease 1 normal forwards running;
-`;
-
 class PortfolioPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			data: this.props.data,
-			activeProject: this.props.data.allMarkdownRemark.edges[1].node,
-			activeProjectImage: this.props.data.cropCenter.edges[1].node
+			activeProject: this.props.data.allMarkdownRemark.edges[0].node,
+			activeProjectImage: this.props.data.cropCenter.edges[0].node
 				.childImageSharp.resize,
 		};
 	}
@@ -72,18 +63,14 @@ class PortfolioPage extends Component {
 							this.state.activeProjectImage
 						) {
 							return (
-								<div
-									style={{
-										border: "2px solid #FE7E11",
-										height: "104px",
-									}}
+								<ActiveThumbnail
 									key={project.node.childImageSharp.resize.originalName}
 									onClick={() => this.handleActiveProject(project)}
 								>
 									<SmallPlaceholder
 										fixed={project.node.childImageSharp.resize}
 									/>
-								</div>
+								</ActiveThumbnail>
 							);
 						} else {
 							return (
@@ -137,7 +124,7 @@ export const query = graphql`
 			edges {
 				node {
 					childImageSharp {
-						resize(width: 575, height: 525, cropFocus: CENTER) {
+						resize(width: 750, height: 525, cropFocus: CENTER) {
 							src
 							tracedSVG
 							originalName
