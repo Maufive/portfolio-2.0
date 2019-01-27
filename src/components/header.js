@@ -55,7 +55,7 @@ const Header = ({ location }) => (
 				</Link>
 			</h1>
 		</Logo>
-		<Nav location={location.pathname} />
+		<Nav location={location ? location.pathname : "/"} />
 	</HeaderStyles>
 );
 

@@ -21,6 +21,10 @@ const StyledPage = styled.div`
 	min-height: 100vh;
 	width: ${props => props.theme.maxWidth};
 	margin: 0 auto;
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		width: 100%;
+	}
 `;
 
 const GlobalStyle = createGlobalStyle`
