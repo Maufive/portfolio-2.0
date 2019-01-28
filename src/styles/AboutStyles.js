@@ -30,7 +30,7 @@ export const TidbitsContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	margin-top: 5rem;
+	margin: 5rem 0;
 	> div {
 		display: flex;
 		flex-direction: column;
@@ -76,7 +76,6 @@ export const ImageContainer = styled.div`
 	width: 50%;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 
 	> div {
 		height: 315px;
