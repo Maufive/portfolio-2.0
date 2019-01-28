@@ -1,13 +1,19 @@
 import styled from "styled-components";
 
 export const HeaderStyles = styled.header`
-	width: 100%;
+	width: ${props => props.theme.maxWidth};
+	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
-	> div {
-		flex: 1;
+	@media (max-width: 1199px) {
+		padding: 0 2rem;
+		width: 100%;
+	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		width: 100%;
 	}
 `;
 
@@ -27,6 +33,12 @@ export const Logo = styled.div`
 			}
 		}
 	}
+
+	@media (max-width: 400px) {
+		a {
+			font-size: 2.5rem;
+		}
+	}
 `;
 
 export const NavStyles = styled.nav`
@@ -41,5 +53,9 @@ export const NavStyles = styled.nav`
 		&:hover {
 			color: ${props => props.theme.orange};
 		}
+	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		display: none;
 	}
 `;

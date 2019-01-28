@@ -1,20 +1,21 @@
-import React from "react";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { Logo, HeaderStyles, NavStyles } from "../styles/HeaderStyles";
+import React from 'react'
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import MobileNav from './MobileNav'
+import { Logo, HeaderStyles, NavStyles } from '../styles/HeaderStyles'
 
 const ActiveLink = styled.p`
 	color: ${props => props.theme.orange};
 	font-weight: 700 !important;
 	border-bottom: 1px solid ${props => props.theme.orange};
-`;
+`
 
 const Nav = props => {
-	const location = props.location;
+	const location = props.location
 	return (
 		<NavStyles>
-			{location === "/about/" ? (
+			{location === '/about/' ? (
 				<Link to="/about/">
 					<ActiveLink>Om mig</ActiveLink>
 				</Link>
@@ -23,7 +24,7 @@ const Nav = props => {
 					<p>Om mig</p>
 				</Link>
 			)}
-			{location === "/portfolio/" ? (
+			{location === '/portfolio/' ? (
 				<Link to="/portfolio/">
 					<ActiveLink>Portfolio</ActiveLink>
 				</Link>
@@ -32,7 +33,7 @@ const Nav = props => {
 					<p>Portfolio</p>
 				</Link>
 			)}
-			{location === "/contact/" ? (
+			{location === '/contact/' ? (
 				<Link to="/contact/">
 					<ActiveLink>Kontakt</ActiveLink>
 				</Link>
@@ -42,8 +43,8 @@ const Nav = props => {
 				</Link>
 			)}
 		</NavStyles>
-	);
-};
+	)
+}
 
 const Header = ({ location }) => (
 	<HeaderStyles>
@@ -55,16 +56,17 @@ const Header = ({ location }) => (
 				</Link>
 			</h1>
 		</Logo>
-		<Nav location={location ? location.pathname : "/"} />
+		<MobileNav />
+		<Nav location={location ? location.pathname : '/'} />
 	</HeaderStyles>
-);
+)
 
 Header.propTypes = {
 	location: PropTypes.object,
-};
+}
 
 Nav.propTypes = {
 	location: PropTypes.string,
-};
+}
 
-export default Header;
+export default Header

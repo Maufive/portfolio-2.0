@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import { fadeIn } from "./Animations";
 
-export const FadeIn = styled.div`
-	opacity: 0;
-	animation: ${fadeIn} 400ms ease 1 normal forwards running;
-`;
-
 export const Jumbotron = styled.div`
 	margin-top: 10rem;
 	display: flex;
@@ -25,6 +20,27 @@ export const Jumbotron = styled.div`
 		opacity: 0;
 		animation: ${fadeIn} 400ms 600ms ease 1 normal forwards running;
 	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		align-items: center;
+		margin-top: 5rem;
+		h1 {
+			font-size: 5rem;
+			text-align: center;
+		}
+		p {
+			max-width: 100%;
+		}
+		h2 {
+			margin: 3rem 0;
+		}
+	}
+
+	@media (max-width: 400) {
+		h1 {
+			font-size: 3rem;
+		}
+	}
 `;
 
 export const Headline = styled.h1`
@@ -43,7 +59,7 @@ export const ButtonContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin-top: 5rem;
-	width: 200px;
+	width: 300px;
 	opacity: 0;
 	animation: ${fadeIn} 400ms 600ms ease 1 normal forwards running;
 	svg {
@@ -54,6 +70,16 @@ export const ButtonContainer = styled.div`
 		&:hover {
 			fill: ${props => props.theme.orange};
 			cursor: pointer;
+		}
+	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		width: 100%;
+		margin: 5rem 0;
+		justify-content: center;
+
+		svg {
+			margin: 0 3rem;
 		}
 	}
 `;

@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const AboutWrapper = styled.div`
 	margin-top: 5rem;
 	display: flex;
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		flex-direction: column;
+	}
 `;
 
 export const Bio = styled.div`
@@ -14,6 +17,12 @@ export const Bio = styled.div`
 	p {
 		color: ${props => props.theme.lightGrey};
 		font-weight: 200;
+	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		order: 2;
+		width: 100%;
+		margin-top: 5rem;
 	}
 `;
 
@@ -33,12 +42,34 @@ export const TidbitsContainer = styled.div`
 			padding: 0;
 			font-weight: 200;
 		}
+
+		@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+			ul {
+				margin-top: 5rem;
+			}
+		}
+	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		order: 3;
+		flex-direction: column;
+
+		> div {
+			align-items: center;
+			width: 100%;
+			margin-bottom: 5rem;
+		}
 	}
 `;
 
 export const ListContainer = styled.div`
 	display: flex;
 	flex-direction: row;
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		justify-content: space-evenly;
+		width: 100%;
+	}
 `;
 
 export const ImageContainer = styled.div`
@@ -58,5 +89,10 @@ export const ImageContainer = styled.div`
 		/* > div > picture > img {
 			border-radius: 50%;
 		} */
+	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		order: 1;
+		width: 100%;
 	}
 `;

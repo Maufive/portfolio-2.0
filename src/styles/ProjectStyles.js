@@ -16,6 +16,10 @@ export const ActiveProjectStyles = styled.div`
 			fill: ${props => props.theme.orange};
 		}
 	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		flex-direction: column;
+	}
 `;
 
 export const Container = styled.div`
@@ -36,6 +40,11 @@ export const Container = styled.div`
 		color: #bdbdbd;
 		font-size: 2rem;
 	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		width: 100%;
+		margin: 0;
+	}
 `;
 
 export const TechStack = styled.p`
@@ -50,19 +59,29 @@ export const ImageAndButtons = styled.div`
 	> div {
 		display: flex;
 		> button {
-			margin-top: 3rem;
+			margin-top: 5rem;
 			margin-right: 3rem;
 		}
+	}
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		align-items: center;
+		margin-bottom: 5rem;
 	}
 `;
 
 export const ThumbnailContainer = styled.div`
 	display: flex;
 	justify-content: space-around;
-	margin: 4rem auto;
+	margin: 5rem auto;
 	width: 50%;
 	opacity: 0;
 	animation: ${fadeIn} 500ms 500ms ease 1 normal forwards running;
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		width: 100%;
+		flex-wrap: wrap;
+	}
 `;
 
 export const ActiveThumbnail = styled.div`
