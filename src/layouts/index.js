@@ -90,7 +90,6 @@ const Layout = ({ children, location }) => (
 			<Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
 				{props => <Center style={props}>{children}</Center>}
 			</Spring>
-			<Footer />
 		</StyledPage>
 	</ThemeProvider>
 )
