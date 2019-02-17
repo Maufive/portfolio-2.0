@@ -84,14 +84,6 @@ class PortfolioPage extends Component {
 								</div>
 							)
 						}
-						// return (
-						// 	<div
-						// 		key={project.node.childImageSharp.resize.originalName}
-						// 		onClick={() => this.handleActiveProject(project)}
-						// 	>
-						// 		<SmallPlaceholder fixed={project.node.childImageSharp.resize} />
-						// 	</div>
-						// );
 					})}
 				</ThumbnailContainer>
 			</Layout>
@@ -115,6 +107,8 @@ export const query = graphql`
 						title
 						date
 						tools
+						demo
+						github
 					}
 					rawMarkdownBody
 				}

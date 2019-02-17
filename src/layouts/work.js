@@ -8,7 +8,7 @@ import {
 	TechStack,
 	ImageAndButtons,
 } from '../styles/ProjectStyles'
-import { Button } from '../styles/Button'
+import { Button, LinkButton } from '../styles/Button'
 
 const StyledImage = styled(Img)`
 	max-height: 325px;
@@ -29,8 +29,16 @@ class ActiveProject extends Component {
 				<ImageAndButtons>
 					<StyledImage fixed={activeProjectImage} />
 					<div>
-						<Button>Live demo</Button>
-						<Button secondary>Github</Button>
+						<LinkButton href={activeProject.frontmatter.demo} target="_blank">
+							Live demo
+						</LinkButton>
+						<LinkButton
+							href={activeProject.frontmatter.github}
+							target="_blank"
+							secondary
+						>
+							Github
+						</LinkButton>
 					</div>
 				</ImageAndButtons>
 				<Container>
