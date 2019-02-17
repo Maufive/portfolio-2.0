@@ -32,7 +32,7 @@ class PortfolioPage extends Component {
 			activeProjectImage: this.props.data.cropCenter.edges[index].node
 				.childImageSharp.resize,
 		})
-		window.scrollTop(0)
+		window.scroll(0, 0)
 	}
 
 	render() {
