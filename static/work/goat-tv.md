@@ -5,7 +5,7 @@ tools:
   - React-Router
   - SASS
   - create-react-app
-demo: 'https://frosty-ardinghelli-d04dbc.netlify.com/'
+demo: 'https://goattv.netlify.com/'
 github: 'https://github.com/Maufive/maudb'
 date: 2019-02-24T13:35:13.561Z
 image: /images/goattv.jpg
