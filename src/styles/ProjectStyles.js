@@ -73,7 +73,6 @@ export const ThumbnailContainer = styled.div`
 	margin: 5rem auto;
 	width: 50%;
 	opacity: 0;
-	animation: ${fadeIn} 500ms 500ms ease 1 normal forwards running;
 
 	> div {
 		cursor: pointer;

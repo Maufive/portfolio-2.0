@@ -25,7 +25,7 @@ class PortfolioPage extends Component {
 	}
 
 	render() {
-		const { location, data } = this.props
+		const { location } = this.props
 		return (
 			<Layout location={location}>
 				<SEO
