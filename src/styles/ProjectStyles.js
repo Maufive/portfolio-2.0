@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fadeIn, grow } from "./Animations";
+import { fadeIn } from "./Animations";
 
 export const ActiveProjectStyles = styled.div`
 	margin-top: 5rem;
@@ -47,10 +47,6 @@ export const Container = styled.div`
 	}
 `;
 
-export const TechStack = styled.p`
-	color: ${props => props.theme.grey} !important;
-`;
-
 export const ImageAndButtons = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -72,12 +68,21 @@ export const ImageAndButtons = styled.div`
 
 export const ThumbnailContainer = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
 	margin: 5rem auto;
 	width: 50%;
 	opacity: 0;
 	animation: ${fadeIn} 500ms 500ms ease 1 normal forwards running;
 
+	> div {
+		cursor: pointer;
+		transition: all 300ms ease;
+
+		&:hover {
+			transform: translateY(-3px);
+		}
+	}
 	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
 		width: 100%;
 		flex-wrap: wrap;
@@ -85,8 +90,24 @@ export const ThumbnailContainer = styled.div`
 `;
 
 export const ActiveThumbnail = styled.div`
-	height: 103px;
-	outline: solid 2px ${props => props.theme.orange};
-	/* border: 2px solid ${props => props.theme.orange}; */
-	animation: ${grow} 400ms ease 1 normal forwards running;
+	border-bottom: 2px solid ${props => props.theme.orange};
+	color: ${props => props.theme.lightGrey};
+	font-weight: 700;
+`;
+
+export const TechStack = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+`;
+
+export const Tag = styled.span`
+	padding: 0.5rem 1.5rem;
+	font-size: 1.5rem;
+	background: ${props => props.theme.black};
+	color: ${props => props.theme.orange};
+	border-radius: 3px;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
 `;

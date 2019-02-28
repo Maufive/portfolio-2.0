@@ -4,7 +4,6 @@ import MenuIcon from "../../assets/menu.svg";
 
 export const MobileNavContainer = styled.div`
 	display: none;
-
 	> div {
 		display: flex;
 		align-items: center;

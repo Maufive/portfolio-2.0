@@ -7,12 +7,10 @@ import { Logo, HeaderStyles, NavStyles } from '../styles/HeaderStyles'
 
 const ActiveLink = styled.p`
 	color: ${props => props.theme.orange};
-	font-weight: 700 !important;
 	border-bottom: 1px solid ${props => props.theme.orange};
 `
 
-const Nav = props => {
-	const location = props.location
+const Nav = ({ location }) => {
 	return (
 		<NavStyles>
 			{location === '/about/' ? (
@@ -49,12 +47,7 @@ const Nav = props => {
 const Header = ({ location }) => (
 	<HeaderStyles>
 		<Logo>
-			<h1>
-				<Link to="/">
-					NIKLAS
-					<span>ALBINSSON</span>
-				</Link>
-			</h1>
+			<Link to="/">Niklas Albinsson</Link>
 		</Logo>
 		<MobileNav />
 		<Nav location={location ? location.pathname : '/'} />

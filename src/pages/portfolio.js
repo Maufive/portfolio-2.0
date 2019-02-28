@@ -1,42 +1,31 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
 import SEO from '../components/seo'
 import Layout from '../layouts/index'
 import ActiveProject from '../layouts/work'
 import { ThumbnailContainer, ActiveThumbnail } from '../styles/ProjectStyles'
-
-const SmallPlaceholder = styled(Img)`
-	max-width: 100px;
-	max-height: 100px;
-	cursor: pointer;
-`
 
 class PortfolioPage extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			data: this.props.data,
-			activeProject: this.props.data.allMarkdownRemark.edges[0].node,
-			activeProjectImage: this.props.data.cropCenter.edges[0].node
-				.childImageSharp.resize,
+			activeProject: this.props.data.allMarkdownRemark.edges[2].node,
 		}
 	}
 
 	handleActiveProject(project) {
-		const index = this.props.data.cropCenter.edges.indexOf(project)
+		const edges = this.props.data.allMarkdownRemark.edges
+		const index = edges.indexOf(project)
 		this.setState({
-			activeProject: this.props.data.allMarkdownRemark.edges[index].node,
-			activeProjectImage: this.props.data.cropCenter.edges[index].node
-				.childImageSharp.resize,
+			activeProject: edges[index].node,
 		})
 		window.scroll(0, 0)
 	}
 
 	render() {
-		const { location } = this.props
+		const { location, data } = this.props
 		return (
 			<Layout location={location}>
 				<SEO
@@ -53,40 +42,35 @@ class PortfolioPage extends Component {
 						'albinsson',
 					]}
 				/>
-				<ActiveProject
-					activeProject={this.state.activeProject}
-					activeProjectImage={this.state.activeProjectImage}
-				/>
+
 				<ThumbnailContainer>
-					{this.state.data.cropCenter.edges.map(project => {
-						if (
-							project.node.childImageSharp.resize ===
-							this.state.activeProjectImage
-						) {
-							return (
-								<ActiveThumbnail
-									key={project.node.childImageSharp.resize.originalName}
-									onClick={() => this.handleActiveProject(project)}
-								>
-									<SmallPlaceholder
-										fixed={project.node.childImageSharp.resize}
-									/>
-								</ActiveThumbnail>
-							)
-						} else {
-							return (
-								<div
-									key={project.node.childImageSharp.resize.originalName}
-									onClick={() => this.handleActiveProject(project)}
-								>
-									<SmallPlaceholder
-										fixed={project.node.childImageSharp.resize}
-									/>
-								</div>
-							)
-						}
-					})}
+					{this.state.activeProject &&
+						this.state.data.allMarkdownRemark.edges.map(project => {
+							if (
+								project.node.frontmatter.title ===
+								this.state.activeProject.frontmatter.title
+							) {
+								return (
+									<ActiveThumbnail
+										key={project.node.frontmatter.title}
+										onClick={() => this.handleActiveProject(project)}
+									>
+										{project.node.frontmatter.title}
+									</ActiveThumbnail>
+								)
+							} else {
+								return (
+									<div
+										key={project.node.frontmatter.title}
+										onClick={() => this.handleActiveProject(project)}
+									>
+										{project.node.frontmatter.title}
+									</div>
+								)
+							}
+						})}
 				</ThumbnailContainer>
+				<ActiveProject activeProject={this.state.activeProject} />
 			</Layout>
 		)
 	}
@@ -106,28 +90,13 @@ export const query = graphql`
 				node {
 					frontmatter {
 						title
+						image
 						date
 						tools
 						demo
 						github
 					}
 					rawMarkdownBody
-				}
-			}
-		}
-		cropCenter: allFile(filter: { relativeDirectory: { eq: "images" } }) {
-			edges {
-				node {
-					childImageSharp {
-						resize(width: 750, height: 525, quality: 90, cropFocus: CENTER) {
-							src
-							tracedSVG
-							originalName
-							width
-							height
-							aspectRatio
-						}
-					}
 				}
 			}
 		}

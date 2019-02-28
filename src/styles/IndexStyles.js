@@ -22,17 +22,16 @@ export const Jumbotron = styled.div`
 	}
 
 	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
-		align-items: center;
 		margin-top: 5rem;
 		h1 {
 			font-size: 5rem;
-			text-align: center;
 		}
 		p {
 			max-width: 100%;
+			margin-block-start: 0;
 		}
 		h2 {
-			margin: 3rem 0;
+			margin: 2rem 0;
 		}
 	}
 
@@ -59,7 +58,7 @@ export const ButtonContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin-top: 5rem;
-	width: 300px;
+	width: 200px;
 	opacity: 0;
 	animation: ${fadeIn} 400ms 600ms ease 1 normal forwards running;
 	svg {
@@ -76,10 +75,10 @@ export const ButtonContainer = styled.div`
 	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
 		width: 100%;
 		margin: 5rem 0;
-		justify-content: center;
+		justify-content: flex-start;
 
 		svg {
-			margin: 0 3rem;
+			margin-right: 5rem;
 		}
 	}
 `;

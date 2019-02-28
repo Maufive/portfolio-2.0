@@ -17,20 +17,18 @@ export const HeaderStyles = styled.header`
 	}
 `;
 
-export const Logo = styled.div`
-	> h1 {
-		a {
-			font-weight: 200;
-			text-transform: uppercase;
-			color: ${props => props.theme.grey};
-			transition: all 300ms ease;
-			span {
-				margin-left: 1rem;
-				font-weight: 700;
-			}
-			&:hover {
-				color: ${props => props.theme.orange};
-			}
+export const Logo = styled.h1`
+	a {
+		text-transform: uppercase;
+		color: ${props => props.theme.grey};
+		transition: all 300ms ease;
+		font-size: 3rem;
+		span {
+			font-weight: 700;
+			margin-left: 1rem;
+		}
+		&:hover {
+			color: ${props => props.theme.orange};
 		}
 	}
 

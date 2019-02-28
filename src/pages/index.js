@@ -25,13 +25,13 @@ const IndexPage = props => (
 
 		<Jumbotron>
 			<Headline>
-				<span>JAVASCRIPT</span>-UTVECKLARE<span>.</span>
+				<span>JAVASCRIPT</span>-UTVECKLARE.
 			</Headline>
 			<h2>Hej! 👋</h2>
 			<p>
 				Jag heter <span style={{ color: '#FE7E11' }}>Niklas Albinsson</span> och
-				är självlärd Javascript-utvecklare från Umeå med en <i>brinnande</i>{' '}
-				motivation för <span style={{ fontWeight: '700' }}>Front-End.</span>
+				är självlärd Javascript-utvecklare från Umeå med en brinnande motivation
+				för Front-End.
 			</p>
 			<Link to="/about/">
 				<Button>Läs mer om mig</Button>

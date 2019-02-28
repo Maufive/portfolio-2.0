@@ -52,8 +52,8 @@ const AboutPage = ({ data, location }) => (
 								Jag heter Niklas Albinsson och är 26 år självlärd webbutvecklare
 								från Umeå. Jag älskar att laga mat, lyssna på musik och resa.
 								<br />
-								Sedan Januari 2016 har jag lärt mig Javascript på fritiden via
-								olika resureser på internet och planerar att börja jobba med
+								Sedan januari 2016 har jag lärt mig Javascript på fritiden via
+								olika resurser på internet och planerar att börja jobba med
 								Front-Endutveckling.
 							</p>
 						</div>
@@ -109,11 +109,11 @@ const AboutPage = ({ data, location }) => (
 										<li>ES6</li>
 										<li>Express</li>
 										<li>MongoDB</li>
-										<li>REST</li>
+										<li>Gatsby</li>
 									</ul>
 									<ul>
 										<li>GraphQL</li>
-										<li>Apollo</li>
+										<li>NextJS</li>
 										<li>Figma</li>
 										<li>CSS3</li>
 										<li>HTML5</li>

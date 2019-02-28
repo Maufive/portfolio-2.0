@@ -1,33 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
+import MyImg from '../components/image'
 import {
 	ActiveProjectStyles,
 	Container,
 	TechStack,
+	Tag,
 	ImageAndButtons,
 } from '../styles/ProjectStyles'
 import { LinkButton, LinkContainer } from '../styles/Button'
 
-const StyledImage = styled(Img)`
-	max-height: 325px;
-	max-width: 500px;
-	border-radius: 5px;
-
-	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
-		max-width: 100%;
-		max-height: 325px;
-	}
-`
-
 class ActiveProject extends Component {
 	render() {
-		const { activeProject, activeProjectImage } = this.props
+		const { activeProject } = this.props
+		const imageUrl = activeProject.frontmatter.image.replace('/', '')
 		return (
 			<ActiveProjectStyles>
 				<ImageAndButtons>
-					<StyledImage fixed={activeProjectImage} />
+					<MyImg src={imageUrl} />
 					<LinkContainer>
 						<LinkButton href={activeProject.frontmatter.demo} target="_blank">
 							Live demo
@@ -45,11 +35,9 @@ class ActiveProject extends Component {
 					<h1>{activeProject.frontmatter.title}</h1>
 					<p>{activeProject.rawMarkdownBody}</p>
 					<TechStack>
-						Byggt med hjälp av:{' '}
 						{activeProject.frontmatter.tools.map(tool => (
-							<span key={tool}>{tool}, </span>
+							<Tag key={tool}>{tool}</Tag>
 						))}
-						.
 					</TechStack>
 				</Container>
 			</ActiveProjectStyles>

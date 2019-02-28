@@ -23,6 +23,10 @@ export const LinkContainer = styled.div`
 	display: flex;
 	justify-content: space-around;
 	margin-top: 3rem;
+
+	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
+		width: 100%;
+	}
 `;
 
 export const LinkButton = styled.a`
