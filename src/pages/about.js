@@ -108,11 +108,11 @@ const AboutPage = ({ data, location }) => (
 										<li>React</li>
 										<li>ES6</li>
 										<li>Express</li>
-										<li>MongoDB</li>
-										<li>Gatsby</li>
+										<li>JEST</li>
+										<li>GIT</li>
 									</ul>
 									<ul>
-										<li>GraphQL</li>
+										<li>MongoDB</li>
 										<li>NextJS</li>
 										<li>Figma</li>
 										<li>CSS3</li>
