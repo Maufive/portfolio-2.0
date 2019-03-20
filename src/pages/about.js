@@ -49,12 +49,11 @@ const AboutPage = ({ data, location }) => (
 						<div style={props}>
 							<h3>Om mig:</h3>
 							<p>
-								Jag heter Niklas Albinsson och är 26 år självlärd webbutvecklare
+								Jag heter Niklas Albinsson och är 27 år självlärd webbutvecklare
 								från Umeå. Jag älskar att laga mat, lyssna på musik och resa.
 								<br />
-								Sedan januari 2016 har jag lärt mig Javascript på fritiden via
-								olika resurser på internet och planerar att börja jobba med
-								Front-Endutveckling.
+								Sedan januari 2016 har jag lärt mig JavaScript på fritiden via
+								olika resurser på internet och planerar att börja jobba som utvecklare med inriktning på Front-end.
 							</p>
 						</div>
 					)}
@@ -125,7 +124,7 @@ const AboutPage = ({ data, location }) => (
 				</Spring>
 			</Bio>
 			<Spring
-				from={{ opacity: 0, transform: 'translate3d(0,400px,0)' }}
+				from={{ opacity: 0, transform: 'translate3d(-400px,0,0)' }}
 				to={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
 			>
 				{props => (
