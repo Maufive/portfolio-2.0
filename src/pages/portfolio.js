@@ -25,6 +25,7 @@ class PortfolioPage extends Component {
 	}
 
 	render() {
+		const { activeProject, data } = this.state
 		const { location } = this.props
 		return (
 			<Layout location={location}>
@@ -44,11 +45,11 @@ class PortfolioPage extends Component {
 				/>
 
 				<ThumbnailContainer>
-					{this.state.activeProject &&
-						this.state.data.allMarkdownRemark.edges.map(project => {
+					{activeProject &&
+						data.allMarkdownRemark.edges.map(project => {
 							if (
 								project.node.frontmatter.title ===
-								this.state.activeProject.frontmatter.title
+								activeProject.frontmatter.title
 							) {
 								return (
 									<ActiveThumbnail
@@ -70,7 +71,7 @@ class PortfolioPage extends Component {
 							}
 						})}
 				</ThumbnailContainer>
-				<ActiveProject activeProject={this.state.activeProject} />
+				<ActiveProject activeProject={activeProject} />
 			</Layout>
 		)
 	}

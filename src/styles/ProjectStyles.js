@@ -72,7 +72,6 @@ export const ThumbnailContainer = styled.div`
 	justify-content: space-around;
 	margin: 5rem auto;
 	width: 50%;
-	opacity: 0;
 
 	> div {
 		cursor: pointer;
