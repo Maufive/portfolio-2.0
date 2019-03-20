@@ -2,7 +2,7 @@ module.exports = {
 	siteMetadata: {
 		title: "Niklas Albinsson Portfolio",
 		description:
-			"Min personliga portfolio för att visa upp tidigare projekt jag arbetat på, både professionella och hobbyprojekt.",
+			"Jag är en självlärd webbutvecklare och här visar jag upp mina tidigare projekt, både professionella och hobbyprojekt",
 		author: "Niklas Albinsson",
 	},
 	plugins: [
