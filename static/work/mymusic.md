@@ -4,8 +4,10 @@ tools:
   - React
   - styled-components
   - React-Spring
-demo: 'https://github.com/Maufive/Topspot/tree/master/frontend'
-github: 'https://github.com/Maufive/mymusic2.0'
+  - Next
+  - ''
+demo: 'https://mymusic40-flqreiaqaq.now.sh'
+github: 'https://github.com/Maufive/mymusic3.0'
 date: 2019-02-17T19:02:51.271Z
 image: /images/mymusic.jpg
 ---
