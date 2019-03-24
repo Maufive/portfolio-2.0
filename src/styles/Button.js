@@ -32,7 +32,7 @@ export const LinkContainer = styled.div`
 export const LinkButton = styled.a`
 	padding: 0.5rem 2.5rem;
 	font-weight: 200;
-	color: ${props => (props.secondary ? props.theme.grey : props.theme.orange)};
+	color: ${props => (props.primary ? props.theme.orange : props.theme.grey)};
 	border: 2px solid ${props => props.theme.grey};
 	border-radius: 5px;
 	background: transparent;

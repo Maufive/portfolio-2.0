@@ -11,7 +11,7 @@ class PortfolioPage extends Component {
 		super(props)
 		this.state = {
 			data: this.props.data,
-			activeProject: this.props.data.allMarkdownRemark.edges[2].node,
+			activeProject: this.props.data.allMarkdownRemark.edges[3].node,
 		}
 	}
 

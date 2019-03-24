@@ -19,14 +19,17 @@ class ActiveProject extends Component {
 				<ImageAndButtons>
 					<MyImg src={imageUrl} />
 					<LinkContainer>
-						<LinkButton href={activeProject.frontmatter.demo} target="_blank">
+						<LinkButton
+							primary
+							href={activeProject.frontmatter.demo}
+							target="_blank"
+							style={{
+								color: '#FE7E11',
+							}}
+						>
 							Live demo
 						</LinkButton>
-						<LinkButton
-							href={activeProject.frontmatter.github}
-							target="_blank"
-							secondary
-						>
+						<LinkButton href={activeProject.frontmatter.github} target="_blank">
 							Github
 						</LinkButton>
 					</LinkContainer>
