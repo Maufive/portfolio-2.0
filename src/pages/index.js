@@ -5,7 +5,6 @@ import SEO from '../components/seo'
 import Layout from '../layouts/index'
 import { Button } from '../styles/Button'
 import { Headline, Jumbotron, ButtonContainer } from '../styles/IndexStyles'
-import InstagramIcon from '../../assets/instagram.svg'
 import GmailIcon from '../../assets/gmail.svg'
 import GithubIcon from '../../assets/github.svg'
 
@@ -38,7 +37,6 @@ const IndexPage = props => (
 			</Link>
 		</Jumbotron>
 		<ButtonContainer>
-			<InstagramIcon />
 			<GithubIcon />
 			<GmailIcon />
 		</ButtonContainer>

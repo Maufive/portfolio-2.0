@@ -1,10 +1,8 @@
 import React from 'react'
 import SEO from '../components/seo'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import Layout from '../layouts/index'
 import { Spring } from 'react-spring'
-import InstagramIcon from '../../assets/instagram.svg'
 import GmailIcon from '../../assets/gmail.svg'
 import GithubIcon from '../../assets/github.svg'
 import { ContactStyles } from '../styles/ContactStyles'
@@ -46,15 +44,6 @@ const ContactPage = props => (
 							>
 								<GithubIcon />
 								https://github.com/Maufive
-							</a>
-						</li>
-						<li>
-							<a
-								href="https://instagram.com/niklasalbinsson"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<InstagramIcon /> https://instagram.com/niklasalbinsson
 							</a>
 						</li>
 					</ul>
