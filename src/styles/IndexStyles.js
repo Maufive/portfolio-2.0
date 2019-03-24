@@ -56,14 +56,13 @@ export const Headline = styled.h1`
 
 export const ButtonContainer = styled.div`
 	display: flex;
-	justify-content: space-between;
 	margin-top: 5rem;
-	width: 200px;
 	opacity: 0;
 	animation: ${fadeIn} 400ms 600ms ease 1 normal forwards running;
 	svg {
 		height: 2.5rem;
 		width: 2.5rem;
+		margin-right: 5rem;
 		fill: ${props => props.theme.lightGrey};
 		transition: fill ${props => props.theme.animationTime} ease;
 		&:hover {
