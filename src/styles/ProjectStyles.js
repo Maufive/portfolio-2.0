@@ -74,6 +74,7 @@ export const ThumbnailContainer = styled.div`
 	width: 50%;
 
 	> div {
+		margin: 10px 20px;
 		cursor: pointer;
 		transition: all 300ms ease;
 
@@ -84,6 +85,7 @@ export const ThumbnailContainer = styled.div`
 	@media (max-width: ${props => props.theme.mobileBreakpoint}) {
 		width: 100%;
 		flex-wrap: wrap;
+		justify-content: flex-start;
 	}
 `;
 
