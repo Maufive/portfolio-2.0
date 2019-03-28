@@ -29,7 +29,7 @@ const IndexPage = props => (
 			<h2>Hej! 👋</h2>
 			<p>
 				Jag heter <span style={{ color: '#FE7E11' }}>Niklas Albinsson</span> och
-				är självlärd Javascript-utvecklare från Umeå med en brinnande motivation
+				är självlärd JavaScript-utvecklare från Umeå med en brinnande motivation
 				för Front-End.
 			</p>
 			<Link to="/about/">
